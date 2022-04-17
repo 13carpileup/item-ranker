@@ -1,0 +1,27 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/photo.css') }}">
+</head>
+<a href="ranking">click me to see cool photos ranked</a>
+
+<h3>Photos<h3/>
+   
+    <form method="POST">
+        <div class="flex-container">
+        <div class="photo1">
+        <img src={{url_for('static', filename="items/"+photo1)}}/>
+        <center>
+        <input type="submit" value="Photo 1" name="pls1"/>
+        <input type="submit" value="Refresh Photo 1" name="ref1"/>
+    </center>
+    </div>
+    <div class="photo2">
+        <img src={{url_for('static', filename="items/"+photo2)}}/>
+        <center>
+        <input type="submit" value="Photo 2" name="pls2" />
+        <input type="submit" value="Refresh Photo 1" name="ref2"/>
+    </center>
+    </div>
+</div>
+        
+    </form>
+    <p>{{session['count']}}</p>

@@ -1,0 +1,22 @@
+<head>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/ranking.css') }}">
+</head>
+<a href="photo">click me to rank cool photos </a>
+<form method="POST">
+<select name="rankType" method="GET" action="/">
+    <option value="{{options[0]}}" selected>{{options[0]}}</option>
+    {% for rankOption in options[1:] %}
+      <option value="{{rankOption}}">{{rankOption}}</option>
+    {% endfor %}
+  </select>
+  <button type="submit" class="btn btn-default">Go</button>
+</form>
+<div class="flex-container">
+{% for item in photoList %}
+<div class="rank">
+<img src={{url_for('static', filename="items/"+item)}}/>
+<p>{{loop.index}}</p>
+<p class="elo">{{photoList[item]}}</p>
+{% endfor %}
+</div>
+</div>
